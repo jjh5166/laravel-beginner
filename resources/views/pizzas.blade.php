@@ -3,12 +3,19 @@
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content">
-        <div class="title m-b-md">Pizzas</div>
-        <p>{{ $name }}</p>
-        @for($i = 0; $i < count($pizzas); $i++)
-            <p>{{ $pizzas[$i]['type'] }}</p>
-        @endfor
-
+        <div class="title">Pizza List</div>
+        {{-- for each loop, $loop var becomes accessible  --}}
+        @foreach($pizzas as $pizza)
+          <div>
+            {{ $loop->index }} - {{ $pizza['type'] }} - {{ $pizza['base'] }}
+            @if($loop->first)
+              <span> - first in the loop</span>
+            @endif
+            @if($loop->last)
+              <span> - last in the loop</span>
+            @endif
+          </div>
+        @endforeach
     </div>
 </div>
 @endsection
