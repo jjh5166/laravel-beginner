@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PizzaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,27 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    // get data from db
-    // variables defined for view here and inserted into return function below
-    $pizzas = [
-        ['type' => 'hawaiian','base' => 'cheesey crust'],
-        ['type' => 'volcano','base' => 'garlic crust'],
-        ['type' => 'veg supreme','base' => 'thin & crispy']
-    ];
-    $name = request('name');
+Route::get('/pizzas', [PizzaController::class, 'index']);
+Route::get('/pizzas/{id}', [PizzaController::class, 'show']);
 
-    //string, json etc can be returned also
-    return view('pizzas',
-        [
-            'pizzas' => $pizzas,
-            'name' => $name
-        ]
-    );
-});
+// Route::get('/pizzas', function () {
+//     // get data from db
+//     // variables defined for view here and inserted into return function below
+//     $pizzas = [
+//         ['type' => 'hawaiian','base' => 'cheesey crust'],
+//         ['type' => 'volcano','base' => 'garlic crust'],
+//         ['type' => 'veg supreme','base' => 'thin & crispy']
+//     ];
+//     $name = request('name');
 
-// use wildcards in curly braces for params
-Route::get('/pizzas/{id}', function ($id) {
-    //query db with $id variable
-    return view('details', ['id' => $id]);
-});
+//     //string, json etc can be returned also
+//     return view('pizzas',
+//         [
+//             'pizzas' => $pizzas,
+//             'name' => $name
+//         ]
+//     );
+// });
+
+// // use wildcards in curly braces for params
+// Route::get('/pizzas/{id}', function ($id) {
+//     //query db with $id variable
+//     return view('details', ['id' => $id]);
+// });
