@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/pizzas', [PizzaController::class, 'index']);
+Route::get('/pizzas/create', [PizzaController::class, 'create']);
+// create route must come first or the show route will hit first
 Route::get('/pizzas/{id}', [PizzaController::class, 'show']);
 
 // Route::get('/pizzas', function () {

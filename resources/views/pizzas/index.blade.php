@@ -6,7 +6,8 @@
         <div class="title">Pizza List</div>
         {{-- for each loop, $loop var becomes accessible  --}}
         @foreach($pizzas as $pizza)
-          <div>
+    <div>{{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}</div>
+          {{-- <div>
             {{ $loop->index }} - {{ $pizza['type'] }} - {{ $pizza['base'] }}
             @if($loop->first)
               <span> - first in the loop</span>
@@ -14,7 +15,7 @@
             @if($loop->last)
               <span> - last in the loop</span>
             @endif
-          </div>
+          </div> --}}
         @endforeach
     </div>
 </div>
