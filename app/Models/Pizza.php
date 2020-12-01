@@ -9,5 +9,10 @@ class Pizza extends Model
 {
     use HasFactory;
 
-    // protected $table = 'some_table'
+    // protected $table = 'some_table';
+
+    // cast toppings to array
+    protected $casts = [
+        'toppings' => 'array'
+    ];
 }
