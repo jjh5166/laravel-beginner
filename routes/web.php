@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+//using built in auth. controller, views, etc all scaffolded
 use App\Http\Controllers\PizzaController;
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +50,7 @@ Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
 //     //query db with $id variable
 //     return view('details', ['id' => $id]);
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
