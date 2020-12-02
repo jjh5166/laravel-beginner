@@ -49875,31 +49875,19 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleError: Module Error (from ./node_modules/resolve-url-loader/index.js):\nresolve-url-loader: loader misconfiguration\n  \"engine\" option is not valid\n    at Object.emitError (/Users/JJHVmac/Documents/Projects/pizzahouse/node_modules/webpack/lib/NormalModule.js:173:6)\n    at handleAsError (/Users/JJHVmac/Documents/Projects/pizzahouse/node_modules/resolve-url-loader/index.js:214:12)\n    at Object.resolveUrlLoader (/Users/JJHVmac/Documents/Projects/pizzahouse/node_modules/resolve-url-loader/index.js:156:12)");
-
-/***/ }),
-
-/***/ "./resources/sass/main.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/main.scss ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/main.scss ***!
-  \****************************************************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/JJHVmac/Documents/Projects/pizzahouse/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/JJHVmac/Documents/Projects/pizzahouse/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/JJHVmac/Documents/Projects/pizzahouse/resources/sass/main.scss */"./resources/sass/main.scss");
+module.exports = __webpack_require__(/*! /Users/JJHVmac/Documents/Projects/pizzahouse/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
