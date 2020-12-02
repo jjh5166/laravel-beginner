@@ -7,6 +7,11 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
+    // protect all routes on controller
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     public function index(){
         // $pizzas = Pizza::all();
         // $pizzas = Pizza::orderBy('name', 'desc')->get();

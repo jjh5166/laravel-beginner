@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 //using built in auth. controller, views, etc all scaffolded
 use App\Http\Controllers\PizzaController;
+use GuzzleHttp\Middleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', [PizzaController::class, 'index']);
+Route::get('/pizzas', [PizzaController::class, 'index'])->middleware('auth'); //protect route here or on controller
 Route::post('/pizzas', [PizzaController::class, 'store']);
 Route::get('/pizzas/create', [PizzaController::class, 'create']);
 // create route must come first or the show route will hit first
-Route::get('/pizzas/{id}', [PizzaController::class, 'show']);
-Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->middleware('auth');
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->middleware('auth');
 
 // Route::get('/pizzas', function () {
 //     // get data from db
