@@ -22,6 +22,7 @@ Route::post('/pizzas', [PizzaController::class, 'store']);
 Route::get('/pizzas/create', [PizzaController::class, 'create']);
 // create route must come first or the show route will hit first
 Route::get('/pizzas/{id}', [PizzaController::class, 'show']);
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
 
 // Route::get('/pizzas', function () {
 //     // get data from db

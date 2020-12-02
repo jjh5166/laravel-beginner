@@ -6,7 +6,9 @@
         <div class="title">Pizza List</div>
         {{-- for each loop, $loop var becomes accessible  --}}
         @foreach($pizzas as $pizza)
-    <div>{{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}</div>
+            <a href="/pizzas/{{$pizza->id}}">
+                {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
+            </a><br/>
           {{-- <div>
             {{ $loop->index }} - {{ $pizza['type'] }} - {{ $pizza['base'] }}
             @if($loop->first)
