@@ -23,13 +23,13 @@ $php artisan routes:list
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/pizzas', [PizzaController::class, 'index'])->middleware('auth'); //protect route here or on controller
+// use name() to name route and access with route() method in view
+Route::get('/orders/pizzas', [PizzaController::class, 'index'])->name('pizzas.index')->middleware('auth'); //protect route here or on controller
 Route::post('/pizzas', [PizzaController::class, 'store']);
-Route::get('/pizzas/create', [PizzaController::class, 'create']);
+Route::get('/orders/pizzas/create', [PizzaController::class, 'create'])->name('pizzas.create');
 // create route must come first or the show route will hit first
-Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->middleware('auth');
-Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->middleware('auth');
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show')->middleware('auth');
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->name('pizzas.destroy')->middleware('auth');
 
 // Route::get('/pizzas', function () {
 //     // get data from db
